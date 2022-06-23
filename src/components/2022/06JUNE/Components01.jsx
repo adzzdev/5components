@@ -160,6 +160,8 @@ function Component2(props){
 }
 
 //--- END OF COMPONENT 2 ---
+
+//--- START OF COMPONENT 3 ---
 const C3Wrapper = styled.div`
     position: relative;
     padding-top: 60px;
@@ -203,6 +205,7 @@ const C3DividerShort = styled.div`
     height: 2px;
     width: 60px;
     margin-bottom: 60px;
+    margin-top: 20px;
 `
 const C3Button = styled.button`
     padding: 0.75rem 3rem;
@@ -225,22 +228,88 @@ function Component3(props){
         <C3Wrapper>
             <div className="container">
                 <C3ContentContainer className="row">
-                    <p className="text-white">GARTNER NAMES KINAXIS A LEADER</p>
-                    <h1 className="text-white">Kinaxis recognized as a Leader in the 2022 Gartner® Magic Quadrant™ for Supply Chain Planning Solutions</h1>
+                    <p className="text-white">HELLO THERE MATE</p>
+                    <h1 className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quos voluptatibus dolores animi aliquam nobis natus autem, unde ut consequuntur commodi blanditiis possimus? </h1>
                     <C3DividerShort></C3DividerShort>
                     <div>
-                        <C3Button>GET THE REPORT</C3Button>
+                        <C3Button>SEE MORE DETAILS</C3Button>
                     </div>
                 </C3ContentContainer>
             </div>
         </C3Wrapper>
     )
 }
-//--- START OF COMPONENT 3 ---
-
 //--- END OF COMPONENT 3 ---
 
 //--- START OF COMPONENT 4 ---
+const C4CWrapper = styled.div`
+    display:flex;
+    flex-direction: row;
+    padding: 3rem 1rem;
+    box-shadow: 0 0 15px 2px rgb(0 0 0 / 6%);
+    margin-bottom: 1rem;
+    @media(max-width: 1200px) {
+        display:block;
+        text-align: center;
+    }
+`
+
+const C4NumberContainer = styled.div`
+    padding: 0 1rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+    
+`;
+
+const C4Number = styled.h1`
+    font-weight: 800;
+    font-size: 3rem;
+    color: ${COLORS.bootstrap.info.main};
+    padding: 0px 0px;
+    line-height: 0.9;
+`
+
+const C4Header = styled.h3`
+    font-weight: 700;
+`
+function Component4(){
+    return(
+        <C4CWrapper>
+            <C4NumberContainer>
+                <C4Number>01</C4Number>
+            </C4NumberContainer>
+            <div>
+                <C4Header>This is a sample Heading</C4Header>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iusto et laudantium quas incidunt quibusdam, deleniti ipsa magni soluta est tempore expedita exercitationem dignissimos dolor. Voluptas, ducimus. Ipsum, praesentium quisquam!</p>
+            </div>
+        </C4CWrapper>
+    );
+}
+function Composite4(){
+    return(
+        <div className="row">
+            <div className="col-lg-4">
+                <Component4></Component4>
+            </div>
+            <div className="col-lg-4">
+                <Component4></Component4>
+            </div>
+            <div className="col-lg-4">
+                <Component4></Component4>
+            </div>
+            <div className="col-lg-4">
+                <Component4></Component4>
+            </div>
+            <div className="col-lg-4">
+                <Component4></Component4>
+            </div>
+            <div className="col-lg-4">
+                <Component4></Component4>
+            </div>
+        </div>
+    )
+}
+
 
 //--- END OF COMPONENT 4 ---
 
@@ -252,8 +321,8 @@ const Components01 = [
     Component1,
     Component2,
     Component3,
-    Component1,
-    Component1
+    Composite4,
+    Component3
 ]
 
 
