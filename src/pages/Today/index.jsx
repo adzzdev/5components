@@ -1,4 +1,11 @@
-import React from 'react'
+import React from 'react';
+import SHOWCASE from '../../SC2022';
+
+const FIRST = SHOWCASE.first;
+const SECOND = SHOWCASE.second;
+const THIRD = SHOWCASE.third;
+const FOURTH = SHOWCASE.fourth;
+const FIFTH = SHOWCASE.fifth;
 
 export default function TodayPage() {
   return (
@@ -10,7 +17,9 @@ export default function TodayPage() {
                     Component 1
                 </div>
                 <div className='card-body'>
-                    Component 1
+                    <div className='container-fluid align-items-center justify-content-center'>
+                        {<FIRST>Sample Button</FIRST>}
+                    </div>
                 </div>
                 <div className='card-footer'>
                     
@@ -24,7 +33,9 @@ export default function TodayPage() {
                     Component 2
                 </div>
                 <div className='card-body'>
-                    Component 2
+                    <div className='container-fluid align-items-center justify-content-center'>
+                    {<SECOND></SECOND>}
+                    </div>
                 </div>
                 <div className='card-footer'>
                     
@@ -38,7 +49,9 @@ export default function TodayPage() {
                     Component 3
                 </div>
                 <div className='card-body'>
-                    Component 3
+                    <div className='container-fluid align-items-center justify-content-center'>
+                        {<THIRD></THIRD>}
+                    </div>
                 </div>
                 <div className='card-footer'>
                     
@@ -52,7 +65,9 @@ export default function TodayPage() {
                     Component 4
                 </div>
                 <div className='card-body'>
-                    Component 4
+                    <div className='container-fluid align-items-center justify-content-center'>
+                        {<FOURTH></FOURTH>}
+                    </div>
                 </div>
                 <div className='card-footer'>
                     
@@ -66,7 +81,9 @@ export default function TodayPage() {
                     Component 5
                 </div>
                 <div className='card-body'>
-                    Component 5
+                    <div className='container-fluid align-items-center justify-content-center'>
+                        {<FIFTH></FIFTH>}
+                    </div>
                 </div>
                 <div className='card-footer'>
                     
