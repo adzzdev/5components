@@ -7,6 +7,9 @@ import COLORS from "../../../assets/theme/base/colors";
 import cUtil from "../../../assets/theme/functions/chromaUtils";
 import photo from "../../../assets/img/photo1.png"
 
+import photo2 from "../../../assets/img/photo3.jpg"
+
+
 
 
 //--- START OF COMPONENT 1 ---
@@ -157,7 +160,82 @@ function Component2(props){
 }
 
 //--- END OF COMPONENT 2 ---
+const C3Wrapper = styled.div`
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    width: 100%;
+    ::before{
+        position: absolute;
+        content: " ";
+        top: 0;
+        left: 0;
+        background-image: url(${photo2});
+        background-position: 50% 45%;
+        background-repeat:no-repeat;
+        position: absolute;
+        width: 100%;
+        height: 100%
+    }
+    ::after{
+        position: absolute;
+        content: " ";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.3;
+        box-shadow: inset 0 0 120px #000, inset 0 0 80px #000, inset 0 0 40px #000;
+    }
 
+`
+
+const C3ContentContainer = styled.div`
+    position: relative;
+    z-index: 1;
+    text-align: center;
+`
+
+const C3DividerShort = styled.div`
+    margin: auto;
+    background-color: white;
+    height: 2px;
+    width: 60px;
+    margin-bottom: 60px;
+`
+const C3Button = styled.button`
+    padding: 0.75rem 3rem;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    border: 3px solid #fff;
+    font-weight: 300;
+    transition:  background-color 0.1s ease-in, color 0.1s ease-in;
+    :hover{
+        background-color: #fff;
+        color: #000;
+        border-color: ${COLORS.bootstrap.secondary.disabled}
+        
+    }
+`
+
+function Component3(props){
+    return(
+        <C3Wrapper>
+            <div className="container">
+                <C3ContentContainer className="row">
+                    <p className="text-white">GARTNER NAMES KINAXIS A LEADER</p>
+                    <h1 className="text-white">Kinaxis recognized as a Leader in the 2022 Gartner® Magic Quadrant™ for Supply Chain Planning Solutions</h1>
+                    <C3DividerShort></C3DividerShort>
+                    <div>
+                        <C3Button>GET THE REPORT</C3Button>
+                    </div>
+                </C3ContentContainer>
+            </div>
+        </C3Wrapper>
+    )
+}
 //--- START OF COMPONENT 3 ---
 
 //--- END OF COMPONENT 3 ---
@@ -173,7 +251,7 @@ function Component2(props){
 const Components01 = [
     Component1,
     Component2,
-    Component1,
+    Component3,
     Component1,
     Component1
 ]
