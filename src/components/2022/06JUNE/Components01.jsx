@@ -1,5 +1,5 @@
 /**
- * 20220622 Components
+ * 202206-03 Components
  */
 
 import styled from "styled-components";
@@ -9,8 +9,35 @@ import photo from "../../../assets/img/photo1.png"
 
 import photo2 from "../../../assets/img/photo3.jpg"
 
+function ContainerCard(props) {
+    return (
+            <div className="container mb-4">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="card">
+                            <div className="card-header">
+                                {props.title}
+                            </div>
+                            <div className="card-body">
+                                {props.children}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    )
+}
 
-
+function ContainerFull(props){
+    return(
+        <div className="w-100 mb-4 ms-0 me-0 p-0">
+            <div className="p-2 text-uppercase bg-primary text-white">
+                <h6>{props.title}</h6>
+            </div>
+            {props.children}
+        </div>
+    )
+}
 
 //--- START OF COMPONENT 1 ---
 
@@ -45,6 +72,14 @@ function Component1(props){
     return(
         <C1 {...props}></C1>
     );
+}
+
+function Composite1(){
+    return(
+        <ContainerCard title="Component 1">
+            <Component1>Sample Button</Component1>
+        </ContainerCard>
+    )
 }
 //--- END OF COMPONENT 1 ---
 
@@ -117,7 +152,7 @@ const C2DescContainer= styled.div`
     }
 `
 
-function Composite2(){
+function Component2(){
     return(
         <C2Container>
             <C2Wrapper>
@@ -134,28 +169,30 @@ function Composite2(){
         </C2Container>
     );
 }
-function Component2(props){
+function Composite2(props){
     return(
-        <div className="row">
-             <div className="col-lg-4">
-                <Composite2></Composite2>
-             </div>
-             <div className="col-lg-4">
-                <Composite2></Composite2>
-             </div>
-             <div className="col-lg-4">
-                <Composite2></Composite2>
-             </div>
-             <div className="col-lg-4">
-                <Composite2></Composite2>
-             </div>
-             <div className="col-lg-4">
-                <Composite2></Composite2>
-             </div>
-             <div className="col-lg-4">
-                <Composite2></Composite2>
-             </div>
-        </div>
+        <ContainerFull title="Component 2">
+            <div className="row">
+                <div className="col-lg-4">
+                    <Component2></Component2>
+                </div>
+                <div className="col-lg-4">
+                    <Component2></Component2>
+                </div>
+                <div className="col-lg-4">
+                    <Component2></Component2>
+                </div>
+                <div className="col-lg-4">
+                    <Component2></Component2>
+                </div>
+                <div className="col-lg-4">
+                    <Component2></Component2>
+                </div>
+                <div className="col-lg-4">
+                    <Component2></Component2>
+                </div>
+            </div>
+        </ContainerFull>
     )
 }
 
@@ -225,18 +262,20 @@ const C3Button = styled.button`
 
 function Component3(props){
     return(
-        <C3Wrapper>
-            <div className="container">
-                <C3ContentContainer className="row">
-                    <p className="text-white">HELLO THERE MATE</p>
-                    <h1 className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quos voluptatibus dolores animi aliquam nobis natus autem, unde ut consequuntur commodi blanditiis possimus? </h1>
-                    <C3DividerShort></C3DividerShort>
-                    <div>
-                        <C3Button>SEE MORE DETAILS</C3Button>
-                    </div>
-                </C3ContentContainer>
-            </div>
-        </C3Wrapper>
+        <ContainerFull title="Component 3">
+            <C3Wrapper>
+                <div className="container">
+                    <C3ContentContainer className="row">
+                        <p className="text-white">HELLO THERE MATE</p>
+                        <h1 className="text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quos voluptatibus dolores animi aliquam nobis natus autem, unde ut consequuntur commodi blanditiis possimus? </h1>
+                        <C3DividerShort></C3DividerShort>
+                        <div>
+                            <C3Button>SEE MORE DETAILS</C3Button>
+                        </div>
+                    </C3ContentContainer>
+                </div>
+            </C3Wrapper>
+        </ContainerFull>
     )
 }
 //--- END OF COMPONENT 3 ---
@@ -287,43 +326,142 @@ function Component4(){
 }
 function Composite4(){
     return(
-        <div className="row">
-            <div className="col-lg-4">
-                <Component4></Component4>
+        <ContainerFull title="Component 4">
+            <div className="row">
+                <div className="col-lg-4">
+                    <Component4></Component4>
+                </div>
+                <div className="col-lg-4">
+                    <Component4></Component4>
+                </div>
+                <div className="col-lg-4">
+                    <Component4></Component4>
+                </div>
+                <div className="col-lg-4">
+                    <Component4></Component4>
+                </div>
+                <div className="col-lg-4">
+                    <Component4></Component4>
+                </div>
+                <div className="col-lg-4">
+                    <Component4></Component4>
+                </div>
             </div>
-            <div className="col-lg-4">
-                <Component4></Component4>
-            </div>
-            <div className="col-lg-4">
-                <Component4></Component4>
-            </div>
-            <div className="col-lg-4">
-                <Component4></Component4>
-            </div>
-            <div className="col-lg-4">
-                <Component4></Component4>
-            </div>
-            <div className="col-lg-4">
-                <Component4></Component4>
-            </div>
-        </div>
+        </ContainerFull>
     )
 }
-
-
 //--- END OF COMPONENT 4 ---
 
 //--- START OF COMPONENT 5 ---
+const C5Container = styled.div`
+    position: relative;
+    display: flex;
+    height: 100%;
+    min-height: 250px;
+    width: 100%;
 
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 0 15px 2px rgb(0 0 0 / 6%);
+    background-color: #fff;
+    
+    h3{
+        color: ${COLORS.bootstrap.info.main}
+    }
+    h3, p{
+        transition: color 0.2s ease-in-out;
+    }
+    :hover{
+        > .image-overlay, .color-overlay{
+            opacity: 1;
+        }
+        h3, p{
+            color: #fff;
+        }
+       
+    }
+`
+const C5ColorOverlay = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+`
+const C5ImageOverlay = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(${photo});
+    background-position: center;
+    background-repeat:no-repeat;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    
+`
+
+const C5Content = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    text-align: center;
+`
+function Component5(){
+    return(
+        <C5Container>
+            <C5ImageOverlay className="image-overlay"></C5ImageOverlay>
+            <C5ColorOverlay className="color-overlay"></C5ColorOverlay>
+            <C5Content className="content">
+                <h3>Header or Title</h3>
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis fuga sequi alias doloremque aliquid animi et quod perferendis, incidunt sit, necessitatibus eos, facilis sapiente iure fugiat quidem mollitia doloribus totam.</p>
+                </div>
+            </C5Content>
+        </C5Container>
+    )
+} 
+
+function Composite5(){
+    return(
+        <ContainerFull title="Component 5">
+            <div className="row">
+                <div className="col-lg-4 mb-2">
+                    <Component5></Component5>
+                </div>
+                <div className="col-lg-4 mb-2">
+                <Component5></Component5>
+                </div>
+                <div className="col-lg-4 mb-2">
+                <Component5></Component5>
+                </div>
+                <div className="col-lg-4 mb-2">
+                <Component5></Component5>
+                </div>
+                <div className="col-lg-4 mb-2">
+                <Component5></Component5>
+                </div>
+                <div className="col-lg-4 mb-2">
+                <Component5></Component5>
+                </div>
+            </div>
+        </ContainerFull>
+    )
+}
 //--- END OF COMPONENT 5 ---
 
 const Components01 = [
-    Component1,
-    Component2,
+    Composite1,
+    Composite2,
     Component3,
     Composite4,
-    Component3
-]
-
+    Composite5
+];
 
 export default Components01;

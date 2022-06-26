@@ -1,5 +1,7 @@
 export default function ArchivePage() {
   return (
-    <div>index</div>
+    <div className="container">
+      <div>index</div>
+    </div>
   )
 }

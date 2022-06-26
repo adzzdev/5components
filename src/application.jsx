@@ -1,7 +1,7 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"
 
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom";
 import PublicLayout from "./layouts/Public"
 
 import routes from "./routes";
@@ -28,9 +28,11 @@ function Application() {
     <BrowserRouter>
       <Routes>
           <Route exact path="sample" element={<h1>Sample Page</h1>}></Route>
-          <Route exact path="/" element={<PublicLayout/>}>
+          <Route exact path="/" element={<Navigate to={"/components"}></Navigate>}></Route>
+          <Route path="/" element={<PublicLayout/>}>
             {getPublicRoutes(routes) }
           </Route>
+          
       </Routes>
     </BrowserRouter>
   );

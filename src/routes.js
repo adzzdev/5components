@@ -1,5 +1,5 @@
 import HomePage from "./pages/Home";
-import TodayPage from "./pages/Today";
+import ComponentPage from "./pages/Components";
 import ArchivePage from "./pages/Archive"
 
 var routes = [
@@ -11,10 +11,10 @@ var routes = [
       layout: "/public",
     },
     {
-      path: "today",
-      name: "Today",
+      path: "components",
+      name: "Components",
       icon: "",
-      component: TodayPage,
+      component: ComponentPage,
       layout: "/public",
     },
     {
