@@ -20,12 +20,10 @@ export default function Public(props) {
     <>
         <Topbar></Topbar>
         <main className='main-content'>
-            <div className='container'>
-                <div className="mt-4 mb-4">
+                <div className="container-fluid mt-4 mb-4">
                     <PageName style={{}}>{location.pathname.replace("/","")}</PageName>
                 </div>
                 <Outlet></Outlet>
-            </div>
         </main>
     </>
 )
